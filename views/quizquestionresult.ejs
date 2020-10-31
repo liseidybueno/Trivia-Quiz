@@ -36,13 +36,13 @@
 
     <% if(selected_answer == correct_answer){ %>
       <%  if(selected_answer == round_questions[questionNumber - 1].answerchoices[i]){ %>
-          <div class="answer-choice" style="background-color: green"><%= round_questions[questionNumber - 1].answerchoices[i] %></div>
+          <div class="answer-choice" style="background-color: #00DE0B"><%= round_questions[questionNumber - 1].answerchoices[i] %></div>
     <%    } else { %>
         <div class="answer-choice"><%= round_questions[questionNumber - 1].answerchoices[i] %></div>
     <%  } %>
     <% } else { %>
     <%    if(selected_answer == round_questions[questionNumber - 1].answerchoices[i]){ %>
-          <div class="answer-choice" style="background-color: red"><%= round_questions[questionNumber - 1].answerchoices[i] %></div>
+          <div class="answer-choice" style="background-color: #e60e0e"><%= round_questions[questionNumber - 1].answerchoices[i] %></div>
     <%    } else { %>
         <div class="answer-choice"><%= round_questions[questionNumber - 1].answerchoices[i] %></div>
     <%  } %>
@@ -55,7 +55,7 @@
     <% } %>
 
     <% if(selected_answer != correct_answer){ %>
-      <div class="answer-choice">The correct answer is: <%= correct_answer %></div>
+      <div class="correct-answer">The correct answer is: <%= correct_answer %></div>
     <% } %>
 
   </div>
