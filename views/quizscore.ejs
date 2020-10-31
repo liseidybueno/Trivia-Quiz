@@ -19,13 +19,14 @@
   </div>
 
 
-<div class="start-div">
+<div class="final-score">
 
-<form action="/quizquestions/<%= questionNumber %>" method="post">
-  <button type="submit" class="start-quiz" name="startquiz"> <h2>Start Quiz</h2> </button>
+ <h2>Final Score: <%= score %>/10</h2>
 
-</form>
+</div>
 
+<div class="take-again">
+  <button class="next-button" type="button" name="button"><a href="/"><h2>Take Quiz Again</h2></a></button>
 </div>
 
 
