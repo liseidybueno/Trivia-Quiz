@@ -3,7 +3,7 @@
   <h3 align="center">TRIVIA QUIZ</h3>
 
   <p align="center">
-    A Trivia Quiz in which a user can respond to 10 questions and receive a score. After each question, the user sees the correct answer and is able to move on to the next question.
+    A Trivia Quiz in which a user can respond to 10 questions and receive a score. After each question, the user sees the correct answer and is able to move on to the next question. Take the quiz <a href="https://rocky-fortress-95943.herokuapp.com/">here</a> (deployed on Heroku). 
     <br />
 </p>
 
