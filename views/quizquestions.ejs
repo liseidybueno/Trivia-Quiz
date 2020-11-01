@@ -18,10 +18,13 @@
     <h1>Trivia Quiz</h1>
   </div>
 
+  <!-- show question number -->
 
   <div class="question-number">
     <h2>Question <%= questionNumber %>/10</h2>
   </div>
+
+  <!-- show question -->
 
   <div class="question">
     <span class="question-text"><%= round_questions[questionNumber - 1].question %></span>
@@ -29,7 +32,7 @@
 
 
   <div class="answers">
-
+  <!-- for each question, go through answer choices and display each as a radio button -->
     <% for(var i = 0; i < round_questions[questionNumber - 1].answerchoices.length; i++){ %>
 
     <div class="answer-choice">

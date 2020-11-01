@@ -28,6 +28,9 @@
   </div>
 
 
+  <!-- for each quiz question, show all answer choices and if the user got the correct answer,
+  then the background of answer choice is green, otherwise it is red and the
+  correct answer choice is shown -->
   <div class="answers">
 
     <% for(var i = 0; i < round_questions[questionNumber - 1].answerchoices.length; i++){ %>
@@ -62,6 +65,8 @@
 
 
   <div class="next-question">
+    <!-- if we have not reached the end of the quiz, then go to the next question,
+    otherwise, submit the quiz  -->
 
   <%  if(questionNumber < 10){ %>
 

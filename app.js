@@ -14,6 +14,8 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(express.static("public"));
 
+
+//function that shuffles an array f
 function shuffle(array) {
   var currentIndex = array.length, temp, randomIndex;
 
@@ -178,27 +180,26 @@ app.post("/quizquestionresult/:questionNumber", function(req, res){
     }
   }
 
+    //get the selected answer for quizquestions
     var selected_answer = req.body.answerchoice;
 
+    //if the selected answer is correct, then increment the score
     if(selected_answer == correct_answer){
       score++;
     }
 
-    if (questionNumberParam > 10) {
-      numberOfQuizzes++;
-      res.redirect("/");
-    } else {
-      //otherwise show the next question
+    //render the result page
       res.render("quizquestionresult", {
         round_questions: round_questions,
         questionNumber: questionNumber,
         correct_answer: correct_answer,
         selected_answer: selected_answer
       });
-    }
+
 
 });
 
+//quiz score page
 app.get("/quizscore", function(req, res){
 
   res.render("quizscore", {score: score});
