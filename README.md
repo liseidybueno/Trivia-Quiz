@@ -28,14 +28,16 @@ Open localhost://3000 to view the app on your web browser.
 
 Some images of the app in use: 
 
-<center><img width="50%" src="screenshots/Trivia Quiz Start.png"></center>
+<p align="center">
+<img width="50%" src="screenshots/Trivia Quiz Start.png"></center>
 <br/>
-<center><img width="50%" src="screenshots/Trivia Quiz Question.png"></center>
+<img width="50%" src="screenshots/Trivia Quiz Question.png"></center>
 <br/>
-<center><img width="50%" src="screenshots/Trivia Quiz Correct.png"></center>
+<img width="50%" src="screenshots/Trivia Quiz Correct.png"></center>
 <br/>
-<center><img width="50%" src="screenshots/Trivia Quiz Incorrect.png"></center>
+<img width="50%" src="screenshots/Trivia Quiz Incorrect.png"></center>
 <br/>
-<center><img width="50%" src="screenshots/Trivia Quiz Score.png"></center>
+<img width="50%" src="screenshots/Trivia Quiz Score.png"></center>
 <br/>
+</p>
 
