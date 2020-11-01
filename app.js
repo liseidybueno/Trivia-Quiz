@@ -14,6 +14,25 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(express.static("public"));
 
+function shuffle(array) {
+  var currentIndex = array.length, temp, randomIndex;
+
+  // While there remain elements to shuffle
+  while (0 !== currentIndex) {
+
+    // Pick a remaining element
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temp = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temp;
+  }
+
+  return array;
+}
+
 //create array to hold ten questions for this round
 var round_questions = new Array();
 
@@ -58,7 +77,7 @@ app.post("/quizquestions/:questionNumber", function(req, res) {
   //if this is the first quiz, create a random array of 10 numbers
   if(numberOfQuizzes == 0){
   while (random_num_array.length < 10) {
-    var rand_number = Math.floor(Math.random() * 20);
+    var rand_number = Math.floor(Math.random() * quizdata.length);
     if (random_num_array.indexOf(rand_number) === -1) {
       random_num_array.push(rand_number);
     }
@@ -67,7 +86,7 @@ app.post("/quizquestions/:questionNumber", function(req, res) {
 } else {
   random_num_array = 0;
   while (random_num_array.length < 10) {
-    var rand_number = Math.floor(Math.random() * 20);
+    var rand_number = Math.floor(Math.random() * quizdata.length);
     if (random_num_array.indexOf(rand_number) === -1) {
       random_num_array.push(rand_number);
     }
@@ -104,8 +123,11 @@ app.post("/quizquestions/:questionNumber", function(req, res) {
       //push the correct choice into the four choices array
       curr_four_choices.push(quizdata[index].correct);
 
+      curr_four_choices = shuffle(curr_four_choices);
+
       //add all 4 answer choices to the current question object
       curr_question.answerchoices = curr_four_choices;
+
 
       //add the current question to the array for this round's questions
       round_questions.push(curr_question);
